@@ -1,3 +1,63 @@
-body {
-    background-color: red;
+:root{
+    /*Palette color name : before nightfall;*/
+    --primary-color:#8EB7CE; /*Mistyblue*/
+    --secondary-color:#54627B; /*Blue Gray*/
+    --tertiary-color:#A2BEEF; /*Serenity*/
+    --quaternary-color:#FBB2A3; /*Salmon*/
+}
+
+
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width:100vw;
+    height:100vh;
+    font-size:1rem;
+    
+}
+/***************Header***************************/
+.container_header{
+    display: flex;
+    flex-direction:column;
+    background: var(--primary-color);
+}
+h1 {
+    background: none;
+    margin-left: auto;
+    margin-right: auto;
+    font-size:3rem;
+    font-weight:bold;
+    font-style:oblique 5deg;
+    color:var(--secondary-color);
+}
+.menu{
+    display:flex;
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+    font-size:2rem;
+}
+
+.menu a{
+    color:var(--secondary-color);
+    text-decoration:none;
+    margin-left:25px;
+}
+/******************Main******************************/
+.container{
+    background: var(--tertiary-color);
+}
+/********************Footer**************************/
+.container_footer{
+    display: flex;
+    background: var(--primary-color);
+}
+
+.container_footer p{
+    background:none;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -1,0 +1,4 @@
+/ HomeController:index
+/Admin AdminController:index
+/Login LoginController:index
+/Registration Registration:index

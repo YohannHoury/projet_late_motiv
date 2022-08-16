@@ -8,9 +8,15 @@
     <title><?php $title ?></title>
 </head>
 <body>
-    <?php include "./views/template/header.phtml" ?>
-    
-    
-    <?php include "./views/template/footer.phtml" ?>
+    <header class="container_header">
+    <?php include "./views/template/header.phtml"; ?>
+    <?php include "./views/template/menu.phtml"?>
+    </header>
+    <main class="container">
+     <?php include "./views/template/".$page.".phtml"; ?>   
+    </main>
+    <footer class="container_footer">
+    <?php include "./views/template/footer.phtml"; ?>
+    </footer>
 </body>
 </html>
