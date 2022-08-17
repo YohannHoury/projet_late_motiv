@@ -1,0 +1,18 @@
+/***************Header***************************/
+.container_header{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height:10vh;
+    background: $primary-color;
+}
+
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+    font-size:5rem;
+    font-weight:bold;
+    font-style:oblique 5deg;
+    text-shadow:5px 5px 5px black;;
+    color:#fff;
+}
