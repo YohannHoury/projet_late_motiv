@@ -4,4 +4,4 @@ $pdo = new PDO ("mysql:host=db.3wa.io;port=3306;dbname=yohannhoury_late_motiv_ap
 $result = $pdo->prepare('SELECT * FROM pages');
 $result->execute();
 $sql = $result->fetch(PDO::FETCH_ASSOC);
-return $sql;
+

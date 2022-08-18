@@ -33,62 +33,108 @@ table {
 td, th {
   padding: 0; }
 
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh; }
+
+h1 {
+  font-family: Lato;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 1.65rem; }
+
+h2 {
+  font-family: Lato;
+  font-size: 1rem;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 1.5rem; }
+
+h3 {
+  font-family: Lato;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 0.963rem; }
+
+p {
+  font-family: Lato;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1.25rem; }
+
+blockquote {
+  font-family: Lato;
+  font-size: 1.313rem;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1.875rem; }
+
+pre {
+  font-family: Lato;
+  font-size: 0.815rem;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1.1607125rem; }
+
 /*Palette color name : before nightfall;*/
 /*Mistyblue*/
 /*Blue Gray*/
 /*Serenity*/
 /*Salmon*/
 /***************Header***************************/
-.container_header {
+.layout__header {
+  display: flex;
+  width: 100vw;
+  height: 15rem;
+  align-items: center;
+  justify-content: left;
+  background-color: #54627B; }
+  .layout__header__img {
+    height: 30rem; }
+
+/********************Footer**************************/
+.layout__footer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 10vh;
-  background: #8EB7CE; }
+  background-color: #54627B; }
 
-h1 {
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 5rem;
-  font-weight: bold;
-  font-style: oblique 5deg;
-  text-shadow: 5px 5px 5px black;
-  color: #fff; }
+.home {
+  display: flex;
+  width: 100vw;
+  background-color: #54627B;
+  justify-content: center; }
+  .home__btn {
+    width: 15rem;
+    height: 25rem;
+    border-radius: 1rem;
+    margin: 3rem; }
+    .home__btn h3:hover {
+      background-image: url("../ressources/login.svg");
+      background-repeat: no-repeat;
+      background-size: center;
+      transform: translateY(9rem);
+      transition: all 3s;
+      width: 14,5rem; }
 
 /******************Main******************************/
-.container {
-  height: 80vh;
-  background: #A2BEEF; }
-
-.loginFigure {
+.layout__container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 200px;
-  height: 200px;
-  border-radius: 0 50px;
-  background-color: #8EB7CE;
-  border: solid 10px #54627B;
-  box-shadow: 5px 5px 15px black; }
-
-.loginFigure img {
-  width: 50px;
-  background-color: #8EB7CE; }
-
-.home-btn {
-  display: flex;
-  height: 50px;
-  width: 150px;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
-  font-weight: bold;
-  list-style-type: none;
-  text-decoration: none;
-  background: #FBB2A3;
-  color: #54627B;
-  border-radius: 50px;
-  box-shadow: 5px 5px 5px black; }
+  width: 100vw;
+  height: auto;
+  background-color: #54627B; }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,6 +4,7 @@ class HomeController
 {
     public function index()
     {
-    require "./views/templates/home.phtml";    
+        $infos = PageManager->getPageByRoute();
+        require "./templates/layout.phtml";
     }
 }

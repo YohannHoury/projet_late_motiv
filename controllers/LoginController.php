@@ -2,8 +2,10 @@
 
 class LoginController
 {
+    
     public function index()
     {
-    require "./views/templates/login.phtml";    
+    $page = $result[1];
+    require "templates/layout.phtml";    
     }
 }

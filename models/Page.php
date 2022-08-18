@@ -1,43 +1,46 @@
 <?php
 
+
 class Page
 {
-   private int $id;
-   private string $route;
-   private string $title;
- 
-   
+    private int $id;
+    private string $route;
+    private string $title;
+    
     function __construct(int $id, string $route, string $title)
     {
-    $this->id = $id;
-    $this->route = $route;
-    $this->title = $title;
+        $this->id = $id;
+        $this->route = $route;
+        $this->title = $title;
     }
-
+    
     public function getId() : int
     {
-        return $this->id;    
+        return $this->id;
     }
-    public function setId(int $id)
+    
+    public function setId(int $id) : void
     {
-        return $this->id;    
-    } 
+        $this->id = $id;
+    }
+    
     public function getRoute() : string
     {
-        return $this->route;    
+        return $this->route;
     }
-    public function setRoute(string $route)
+    
+    public function setRoute(string $route) : void
     {
-        return $this->route;      
-    } 
+        $this->route = $route;
+    }
+    
     public function getTitle() : string
     {
         return $this->title;
     }
     
-    public function setTitle(string $title)
+    public function setTitle(string $title) : void
     {
         $this->title = $title;
     }
-    
-}    
+}

@@ -2,17 +2,23 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Late'Motiv</title>
+        <title><?php echo $title; ?></title>
         <link rel="stylesheet" href="front/css/style.css" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
     </head>
     <body>
-        <header class="container_header">
-            <h1>LATE'MOTIV</h1>
+        <header class="layout__header">
+            <figure class="layout__header__figure">
+                <img class="layout__header__img" src="./front/ressources/Logo_Late_MotivW.png"/>
+                <figcaption>
+                    
+                </figcaption>
+            </figure>
         </header>
-        <main class="container">
+        <main class="layout__container">
             <?php require "./templates/".$page.".phtml"; ?>
         </main>
-        <footer class="container_footer">
+        <footer class="layout__footer">
             <small>Application et Site Créés par Yohann HOURY</small>
         </footer>
     </body>

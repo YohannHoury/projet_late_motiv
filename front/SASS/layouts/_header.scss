@@ -1,18 +1,14 @@
 /***************Header***************************/
-.container_header{
+.layout__header{
     display: flex;
-    justify-content:center;
+    width: 100vw;
+    height: 15rem;
     align-items:center;
-    height:10vh;
-    background: $primary-color;
+    justify-content:left;
+    background-color:$secondary-color;
+    &__img{
+       height: 30rem;
+    }
 }
 
-h1 {
-    margin-left: auto;
-    margin-right: auto;
-    font-size:5rem;
-    font-weight:bold;
-    font-style:oblique 5deg;
-    text-shadow:5px 5px 5px black;;
-    color:#fff;
-}
+

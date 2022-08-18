@@ -1,4 +1,7 @@
 / HomeController:index
-/Admin AdminController:index
-/Login LoginController:index
-/Registration Registration:index
+/login LoginController:index
+/admin AdminController:index
+/account AccountController:index
+/registration RegistrationController:index
+/contact ContactController:index
+/about AboutController:index
