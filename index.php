@@ -1,6 +1,7 @@
 <?php
-require "config/DataBase.php";
+require_once "config/DataBase.php";
 require "autoload.php";
+
 
 try {
 
@@ -25,4 +26,3 @@ catch(Exception $e)
     }
 }
 
-var_dump($sql);

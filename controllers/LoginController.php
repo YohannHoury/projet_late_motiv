@@ -2,10 +2,9 @@
 
 class LoginController
 {
-    
-    public function index()
+    public function login()
     {
-    $page = $result[1];
-    require "templates/layout.phtml";    
+    $pages = getPageByRoute('login');
+    require "./templates/layout.phtml";   
     }
 }

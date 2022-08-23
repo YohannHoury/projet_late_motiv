@@ -1,29 +1,35 @@
-<h1><?php echo $infos['title']; ?></h1>
 
-<h2><?php echo $infos['content']; ?></h2>
-    <nav class="home">
+<section class="home">
+
+<header >
+    <p><?= $pages['content']; ?></p>
+</header>
+
+    
+ <nav "home__nav">
             
             <a href="index.php?path=login">
-            <button class="home__btn">
+            <button class="home__nav__btn">
             <h3>CONNEXION</h3>
             </button>
             </a> 
             
             <a href="index.php?path=registration">
-            <button class="home__btn">
+            <button class="home__nav__btn">
             <h3>INSCRIPTION</h3>
             </button>
             </a> 
              
             <a href="index.php?path=about">
-            <button class="home__btn">
+            <button class="home__nav__btn">
             <h3>A PROPOS</h3>
             </button>
             </a> 
             
             <a href="index.php?path=contact">
-            <button class="home__btn">
+            <button class="home__nav__btn">
             <h3>CONTACT</h3>
             </button>
             </a> 
     </nav>
+</section>

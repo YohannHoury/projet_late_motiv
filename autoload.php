@@ -2,13 +2,12 @@
 /**
  * @author : Gaellan
  */
+require "./controllers/AbstractController.php";
+require "./controllers/PageController.php";
 require "./controllers/HomeController.php";
 require "./controllers/LoginController.php";
-require "./controllers/AdminController.php";
-require "./controllers/ContactController.php";
-require "./controllers/AboutController.php";
-require "./controllers/AccountController.php";
 require "./controllers/RegistrationController.php";
+require "./managers/PageManager.php";
 require "./services/Router.php";
 
 $routes = [];
