@@ -3,15 +3,13 @@
     <head>
         <meta charset="utf-8" />
         <title><?php echo $pages['title']; ?></title>
-        <link rel="stylesheet" href="front/css/style.css" type="text/css" />
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
     </head>
     <body>
         <header class="layout__header">
             <h1><?= $pages['title']?></h1>
-            
         </header>
-        <main class="layout__container">
+        <main>
             <?php require "./templates/".$pages['route'].".phtml"; ?>
         </main>
         <footer class="layout__footer">

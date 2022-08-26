@@ -1,5 +1,5 @@
 <?php
-require_once "config/DataBase.php";
+
 require "autoload.php";
 
 
@@ -26,3 +26,5 @@ catch(Exception $e)
     }
 }
 
+$user = getUserById(1);
+var_dump($user);

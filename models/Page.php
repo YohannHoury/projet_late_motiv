@@ -37,6 +37,7 @@ class Page
     public function getTitle() : string
     {
         return $this->title;
+        var_dump($this->title);
     }
     
     public function setTitle(string $title) : void

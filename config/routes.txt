@@ -1,3 +1,5 @@
 / HomeController:index
 /login LoginController:login
 /registration RegistrationController:entry
+/about AboutController:show
+/contact ContactController:address

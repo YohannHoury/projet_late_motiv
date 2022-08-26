@@ -6,8 +6,12 @@ require "./controllers/AbstractController.php";
 require "./controllers/PageController.php";
 require "./controllers/HomeController.php";
 require "./controllers/LoginController.php";
+require "./controllers/ContactController.php";
+require "./controllers/AboutController.php";
 require "./controllers/RegistrationController.php";
 require "./managers/PageManager.php";
+require "./managers/UserManager.php";
+require_once "config/DataBase.php";
 require "./services/Router.php";
 
 $routes = [];
