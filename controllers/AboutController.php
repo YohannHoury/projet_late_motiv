@@ -2,9 +2,10 @@
 
     class AboutController
     {
-      public function show()
+      public function index()
       {
-        $pages = getPageByRoute("about");
-        require "./templates/layout.phtml";
+        $pm = new PageManager();
+        $pages = $pm->getPageByRoute('about');
+        require 'templates/layout.phtml';
       }  
     }

@@ -1,22 +1,35 @@
 
         <section class="login">
+            <header class="login--header" >
+             <h1><?= $pages['content'] ?></h1>
+
+            </header>
             
-            <form action="verification.php" method="POST">
+            <form method="POST">
                 
-               <fieldset class="login__fieldset"> 
-               
-                <label>Nom d'utilisateur</label>
-                <input type="text" placeholder="Entrer le nom d'utilisateur" name="username">
-    
+               <fieldset class="login--fieldset"> 
                 
-            
-                <label>Mot de passe</label>
-                <input type="password" placeholder="Entrer le mot de passe" name="password">
-            
+            <div>
+              <p>
+                    <label>Nom d'utilisateur</label>
+              </p>
+              <p>    
+                    <input type="text" placeholder="Entrer le nom d'utilisateur" name="username">
+              </p>
+            </div>
                 
-               
+            <div>
+                <p>
+                    <label>Mot de passe</label>
+                </p>
+                <p>
+                    <input type="password" placeholder="Entrer le mot de passe" name="password">
+                </p>
+            </div>
+                
+            <p>   
                 <input type="submit" id='submit' value='VALIDER' >
-            
+            <p/>
                 
                 <!--?php-->
                 <!--if(isset($_GET['erreur'])){-->

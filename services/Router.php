@@ -4,7 +4,7 @@
  */
 
 class Router {
-
+    
     private function parseRequest(string $request)
     {
         $route = [];
@@ -12,16 +12,40 @@ class Router {
         $routeData = explode("/", $request);
 
         $route["path"] = "/".$routeData[1];
-
+        
+        //If we have 2 slugs or more 
         if(count($routeData) > 2)
         {
-            $route["parameter"] = $routeData[2];
+            
+            for ($i=2,$max=count($routeData)-1;$i<=$max;$i++)
+            {
+                // We check if the last slug ...
+                if($i==$max)
+                {
+                    // ... is a numeric value
+                    if(is_numeric($routeData[$i]))
+                    { 
+                        // if it is, then it is a parameter
+                        $route["parameter"] = $routeData[$i];
+                    }
+                    else
+                    {
+                        // if not, then it is a path and there is no parameter
+                        $route["path"]=$route["path"]."/".$routeData[$i];
+                        $route["parameter"] = null;
+                    }
+                }
+                else
+                {
+                    //if it isn't the last slug, then we add it to the path
+                    $route["path"]=$route["path"]."/".$routeData[$i];
+                }
+            }
         }
         else
         {
             $route["parameter"] = null;
         }
-
         return $route;
     }
 
@@ -43,7 +67,7 @@ class Router {
                 {
                     $routeFound = true;
 
-                    $ctrl = new $controller();
+                    $ctrl = new $controller(); //magic method
                     $ctrl->$method($requestData["parameter"]);
                 }
                 else if(!$route["parameter"] && $requestData["parameter"] === null)
@@ -51,8 +75,8 @@ class Router {
                     $routeFound = true;
 
                     $ctrl = new $controller();
-                    $ctrl->$method();
-                }
+                    $ctrl->$method($_POST);
+                    }
             }
         }
 

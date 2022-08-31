@@ -1,5 +1,7 @@
 / HomeController:index
-/login LoginController:login
-/registration RegistrationController:entry
-/about AboutController:show
-/contact ContactController:address
+/page-preview PageController:preview
+/login LoginController:index
+/registration RegistrationController:index
+/about AboutController:index
+/contact ContactController:index
+/account AccountController:index

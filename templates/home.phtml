@@ -1,35 +1,37 @@
 
 <section class="home">
 
-<header class="home__header" >
-    <p><?= $pages['content']; ?></p>
-</header>
+<header class="home--header" >
+     <h1><?= $pages['content']; ?></h1>
 
+</header>
     
- <nav "home__nav">
-            
+ <nav class="home--nav">
+         <ul > 
+            <li>
             <a href="index.php?path=login">
-            <button class="home__nav__btn">
             <h3>CONNEXION</h3>
-            </button>
             </a> 
+            </li>
             
+            <li>
             <a href="index.php?path=registration">
-            <button class="home__nav__btn">
             <h3>INSCRIPTION</h3>
-            </button>
             </a> 
-             
-            <a href="index.php?path=about">
-            <button class="home__nav__btn">
-            <h3>A PROPOS</h3>
-            </button>
-            </a> 
+            </li>
             
-            <a href="index.php?path=contact">
-            <button class="home__nav__btn">
-            <h3>CONTACT</h3>
-            </button>
+            <li>
+            <a href="index.php?path=about">
+            <h3>A PROPOS</h3>
             </a> 
+            </li>
+            
+            <li>
+            <a href="index.php?path=contact">
+            <h3>CONTACT</h3>
+
+            </a> 
+            </li>
+        </ul>  
     </nav>
 </section>

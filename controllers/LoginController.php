@@ -2,9 +2,10 @@
 
 class LoginController
 {
-    public function login()
+    public function index()
     {
-    $pages = getPageByRoute('login');
-    require "./templates/layout.phtml";   
+    $pm = new PageManager();
+    $pages = $pm->getPageByRoute('login');
+    require 'templates/layout.phtml';
     }
 }

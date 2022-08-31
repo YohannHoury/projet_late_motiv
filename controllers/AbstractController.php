@@ -6,7 +6,7 @@ abstract class AbstractController
     {
         $data = $values;
         
-        require "templates/".$template.".phtml";
+        require "./templates/".$template.".phtml";
     }
     
     protected function render(string $template, array $values)
@@ -14,9 +14,6 @@ abstract class AbstractController
         $data = $values;
         $page = $template;
         
-        require "templates/layout.phtml";
+        require "./templates/layout.phtml";
     }
 }
-
-
-?>

@@ -2,6 +2,8 @@
 /**
  * @author : Gaellan
  */
+require_once "./managers/DataBase.php";
+require_once "./managers/PageManager.php";
 require "./controllers/AbstractController.php";
 require "./controllers/PageController.php";
 require "./controllers/HomeController.php";
@@ -9,9 +11,7 @@ require "./controllers/LoginController.php";
 require "./controllers/ContactController.php";
 require "./controllers/AboutController.php";
 require "./controllers/RegistrationController.php";
-require "./managers/PageManager.php";
-require "./managers/UserManager.php";
-require_once "config/DataBase.php";
+require "./controllers/AccountController.php";
 require "./services/Router.php";
 
 $routes = [];
@@ -31,15 +31,24 @@ if ($handle) { // if the file exists
 
         if(substr_count($route["path"], "/") > 1) // check if the path string has more than 1 "/"
         {
-            $route["parameter"] = true; // the route expects a parameter
-            $pathData = explode("/", $route["path"]); // divide the path in three strings (cut at the "/")
-            $route["path"] = "/".$pathData[1]; // isolate the path without the parameters
+            if(substr($route["path"],-1)=="*") // check if the last char of the path is "*", which represents a parameter
+            {
+
+                $route["parameter"] = true; // the route expects a parameter
+                $pathData = explode("/", $route["path"]); // divide the path in three strings (cut at the "/")
+                $route["path"] = substr($route["path"], 0, -2); // isolate the path without the parameters
+                
+            }
+            else
+            {
+                $route["parameter"] = false;
+            }
         }
         else
         {
             $route["parameter"] = false; // the route does not expect a parameter
         }
-
+        
         $controllerString = $routeData[1]; // the controller string is what was after the " ";
 
         $controllerData = explode(":", $controllerString); // divide the controller string in two strings (cut at the ":")
@@ -50,6 +59,6 @@ if ($handle) { // if the file exists
 
         $routes[] = $route; // add the new route to the routes array
     }
-
+    
     fclose($handle); // close the file
 }

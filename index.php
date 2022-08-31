@@ -1,9 +1,8 @@
 <?php
-
 require "autoload.php";
 
-
-try {
+try 
+    {
 
     $router = new Router();
 
@@ -25,6 +24,3 @@ catch(Exception $e)
         require "./templates/404.phtml";
     }
 }
-
-$user = getUserById(1);
-var_dump($user);

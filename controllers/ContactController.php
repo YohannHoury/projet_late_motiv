@@ -2,9 +2,10 @@
 
     class ContactController
     {
-      public function address()
+      public function index()
       {
-        $pages = getPageByRoute("contact");
-        require "./templates/layout.phtml";
+        $pm = new PageManager();
+        $pages = $pm->getPageByRoute('contact');
+        require 'templates/layout.phtml';
       }  
     }

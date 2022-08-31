@@ -2,9 +2,10 @@
 
 class RegistrationController
 {
-    public function Entry()
+    public function index()
     {
-    $pages = getPageByRoute('registration');
-    require "./templates/layout.phtml";  
+    $pm = new PageManager();
+    $pages = $pm->getPageByRoute('registration');
+    require 'templates/layout.phtml';
     }
 }

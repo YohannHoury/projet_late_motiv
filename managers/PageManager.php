@@ -1,28 +1,28 @@
 <?php
 
-require_once './config/DataBase.php';
-
-
-
-function getAllPagesRoute() :?array
+class PageManager extends DataBase
 {
-    $pdo = getPdo();
-    $query = $pdo->prepare('SELECT route FROM pages');
-    $query->execute();
-    $results = $query->fetchAll(PDO::FETCH_DEFAULT);
-
-    return $results;
-}
-
-function getPageByRoute(string $route = "home") :?array 
-{
-    $pdo = getPdo();
-    $query = $pdo->prepare('SELECT * FROM pages WHERE pages.route = :route');
-    $parameters = [
-        'route' => $route
-    ];
-    $query->execute($parameters);
-    $result = $query->fetch(PDO::FETCH_DEFAULT);
     
-    return $result;
-}
+   public function getAllPagesRoute() :?array
+    { 
+        $query =$this->bdd->prepare('SELECT route FROM pages');
+        $query->execute();
+        $results = $query->fetchAll(PDO::FETCH_ASSOC);
+    
+        return $results;
+    }
+
+    public function getPageByRoute(string $route = "home"):?array
+    {
+        $query = $this->bdd->prepare('SELECT * FROM pages WHERE pages.route =:route');
+        $parameters = [
+            'route' => $route
+        ];
+        $query->execute($parameters);
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+        
+        return $result;
+        }
+}       
+$pm = new PageManager();
+return $pm;
