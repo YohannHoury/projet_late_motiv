@@ -4,6 +4,7 @@
  */
 require_once "./managers/DataBase.php";
 require_once "./managers/PageManager.php";
+require_once "./managers/UserManager.php";
 require "./controllers/AbstractController.php";
 require "./controllers/PageController.php";
 require "./controllers/HomeController.php";

@@ -2,7 +2,6 @@
 
 class PageManager extends DataBase
 {
-    
    public function getAllPagesRoute() :?array
     { 
         $query =$this->bdd->prepare('SELECT route FROM pages');

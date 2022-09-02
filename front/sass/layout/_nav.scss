@@ -1,0 +1,16 @@
+.nav
+{
+  @include FlexC;
+      .nav ul
+      {
+        @include FlexC;
+            .nav ul li
+            {   
+                width:20rem;
+                text-align:center;
+                background:rgba($oxford-blue,0.4);
+                margin:1rem;
+                border-radius:25px;
+           }    
+      } 
+}

@@ -1,4 +1,5 @@
 <?php
+
 require "autoload.php";
 
 try 
@@ -24,3 +25,5 @@ catch(Exception $e)
         require "./templates/404.phtml";
     }
 }
+var_dump($user->addUser(8,'paul','jack','polo','ppj125','user','cage@coco.com'));
+var_dump($user->getAllUsersId());
