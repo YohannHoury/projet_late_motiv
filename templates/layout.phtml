@@ -4,14 +4,10 @@
         <meta charset="utf-8" />
         <title><?= $pages['title']; ?></title>
         <meta name="description" content=<?= $pages['content']; ?>  >
-        <link rel="stylesheet" href="front/css/style.css">
-        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+        <!--<link rel="stylesheet" href="front/css/style.css">-->
+        <link href="http://fonts.cdnfonts.com/css/petit-formal-script" rel="stylesheet">
     </head>
-    <body class="layout">
+    <body>
      <?php require "./templates/".$pages['route'].".phtml"; ?>
     </body>
 </html>
-
-
-
-

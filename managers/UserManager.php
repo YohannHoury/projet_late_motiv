@@ -2,52 +2,93 @@
 require "./models/User.php";
 
 
-
 Class UserManager extends DataBase
 {
-    function getAllUsersId(): array// read users consultations de la base de données
+    
+    
+    function getAllUsersId(): ?array
+    // tous les utilisateurs de la base de données identifiés par leurs Id
+            {
+                $query = $this->bdd->prepare('SELECT * FROM users ORDER BY `users`.`id` ASC');
+                $query->execute();
+                $results = $query->fetchAll(PDO::FETCH_ASSOC);
+                
+                return $results;
+            }
+    function getAllUsersUsernames() : ?array
+    // tous les utilisateurs de la base de données par identifiés par leurs username
+            {
+                $query = $this->bdd->prepare('SELECT username FROM users ');
+                $query->execute();
+                $results = $query->fetchAll(PDO::FETCH_ASSOC);
+                
+                return $results;
+            }
+    
+    function getAllUsersEmails() : ?array
+    //tous les utilisateurs de la base de donnéesidentifiés par leurs email
+            {
+                $query = $this->bdd->prepare('SELECT email FROM users ');
+                $query->execute();
+                $results = $query->fetchAll(PDO::FETCH_ASSOC);
+                
+                return $results;
+            }
+    function getUserById(?int $id) : ?User
+    // un utilisteur parmi tous le utilsateurs de la base de données ciblé par son Id
         {
-        $query = $this->bdd->prepare('SELECT * FROM `users` ORDER BY `users`.`id` ASC');
-        $query->execute();
-        $results = $query->fetchAll(PDO::FETCH_ASSOC);
-        
-        return $results;
-
-        }   
-    function getUserById(int $uid) : ?User
-        {
-           $query= $this->bdd->prepare('SELECT * FROM users WHERE id = :id');
-           $parameters = [
-               'id'=> $uid
-               ];
-           $query->execute($parameters);
-           $getUser = $query->fetch(PDO::FETCH_ASSOC);
-           
-           return $getUser;
+            $query= $this->bdd->prepare('SELECT *  FROM users WHERE id = :id');
+            $parameters = [
+                'id'=> $id
+                ];
+            $query->execute($parameters);
+            $getUser = $query->fetch(PDO::FETCH_ASSOC );
+            
+            return $getUser;
         }
-    function addUser(?int $id, string $first_name,string $last_name, string $username,string $password,string $role,string $email ) : void
-        // create users ajouter un utilisateur à la base de données 
+    function addNewUser(User $user) : void
+        // créer un utilisateur dans la base de données sur la table 'users' 
         {
-         $sql = 'INSERT INTO users (first_name, last_name, username, password, role, email) VALUES ( :first_name, :last_name, :username, :password, :role, :email)';
-         $addUser = $this->bdd->prepare($sql);
-         $parameters =
-         [
-             'first_name'=>$first_name,
-             'last_name'=>$last_name,
-             'username'=>$username,
-             'password'=>$password,
-             'role'=>$role,
-             'email'=>$email
-            ];
-         $addUser->execute($parameters);
+            $id = $user->getId();
+            $username = $user->getUsername();
+            $password = $user->getPassword();
+            $email = $user->getEmail();
+            
+            $sql = 'INSERT INTO users ( username, password,email) VALUES ( :username, :password, :email)'   ;
+            $addUser = $this->bdd->prepare($sql);
+            $parameters =
+            [
+                'username'=>$username,
+                'password'=>$password,
+                'email'=>$email
+               ];
+            $addUser->execute($parameters);
         }
     
-// update users mettre à jour les utilisateurs dans la base de données
-    function updtUser(User $user):void
+// mettre à jour les utilisateurs dans la base de données
+    function updtUser(User $user) : void
     {
-        
-    }
-// delete users supprimer utilisateurs de la base de données
+            $id = $user->getId();
+            $username = $user->getUsername();
+            $email = $user->getEmail();
+            $parameters = 
+            [
+            'id' => $id,    
+            'username' => $username,
+            'email' => $email,
+            ];
+            $query = $this->bdd->prepare("UPDATE users SET username=:username, email=:email WHERE users.id=:id");
+            $query->execute($parameters);
+        }
+// supprimer un utilisateur (profil) de la base de données
+
+    function deleteUser(int $id) : void
+    {
+            $query = $this->bdd->prepare("DELETE FROM users WHERE users.id=:id");
+            $parameters = 
+            [
+            'id' => $id,    
+            ];
+            $query->execute($parameters);
+        }
 }
-$user = new UserManager();
-return $user;

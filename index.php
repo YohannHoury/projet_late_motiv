@@ -25,5 +25,11 @@ catch(Exception $e)
         require "./templates/404.phtml";
     }
 }
-var_dump($user->addUser(8,'paul','jack','polo','ppj125','user','cage@coco.com'));
-var_dump($user->getAllUsersId());
+
+
+$um = new UserManager;
+var_dump($um);
+var_dump($um->getAllUsersId());
+$user = new User(1,'titi','pwd','mail');
+var_dump($upd = $um->addNewUser($user)); 
+var_dump($um);

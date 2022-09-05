@@ -1,0 +1,24 @@
+{
+  "name": "projet_late_motiv",
+  "version": "1.0.0",
+  "description": "style de mon projet final de la 3WA",
+  "main": "index.js",
+  "scripts": {
+      "normal": "sass ./front/sass/style.scss:./front/css/style.css",
+      "minify": "sass ./front/sass/style.scss:./front/css/stylemin.css --style compressed",
+      "watch": "sass ./front/sass/style.scss:./front/css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YohannHoury/projet_late_motiv.git"
+  },
+  "author": "Yohann Houry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YohannHoury/projet_late_motiv/issues"
+  },
+  "homepage": "https://github.com/YohannHoury/projet_late_motiv#readme",
+  "dependencies": {
+    "sass": "^1.54.7"
+  }
+}

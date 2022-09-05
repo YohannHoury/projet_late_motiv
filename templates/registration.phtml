@@ -1,29 +1,20 @@
 <section class="registration">
-     <h1><?= $pages['content']; ?></h1>
+     <h1><?= $pages['title'] ?></h1>
+                <nav>
+                    <ul class="layout__ul">
+                        <li>
+                            <a href="index.php">Accueil</a>
+                        </li>
+                    </ul>
+                </nav>
     <form method=POST >
-        <fieldset class="registration--fieldset">
+        <fieldset class="registration__fieldset">
         <div>
             <p>
-                <label>prénom </label>
-            </p>
-            <p>        
-                <input type="text" first_name=""/>
-            </p>    
-        </div>
-        <div>
-            <p>
-                <label>nom </label>
-            </p>
-            <p>        
-                <input type="text" last_name=""/>
-            </p>    
-        </div>
-        <div>
-            <p>
-                <label>Adresse courriel </label>
+                <label>adresse courriel </label>
             </p>
             <p>
-                <input type="text" email=""/>
+                <input type="text" name="email" email=""/>
             </p>    
         </div>
         <div>
@@ -31,7 +22,7 @@
                 <label>Pseudo </label>
             </p>
             <p>        
-                <input type="text" pseudo=""/>
+                <input type="text" name="pseudo" pseudo=""/>
             </p>    
         </div>
         <div>
@@ -39,7 +30,7 @@
                 <label>Mot de passe </label>
             </p>
             <p>        
-                <input type="password" password=""/>
+                <input type="password" name="passwordl" password=""/>
             </p>
         </div>
         <div>
@@ -47,9 +38,9 @@
                 <input type="submit" value="VALIDER"/>
             </p>    
         </div>
+        <?php var_dump($_POST); ?>
         </fieldset>
     
     </form>
 
 </section>    
-    
