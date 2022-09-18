@@ -1,0 +1,26 @@
+
+<section class="intro">
+	<h1>Bienvenue sur Late Motiv</h1>
+	<h2>L'application anti-proscratination</h2>
+</section>
+
+<section class="menu" id="targetViews">
+	
+
+	<?php foreach($articles as $article): ?>
+	<article>
+		<h3><?= htmlspecialchars($article['art_title']) ?></h3>
+		<h5><?= htmlspecialchars($article['art_undertitle']) ?></h5>
+		<figure>
+			<img src="public/uploads/img_Of_Articles/<?= $article['art_img'] ?>" alt="image">
+			<figcaption><?= htmlspecialchars($article['art_price']) ?> €<br>
+			</figcaption>
+		</figure>
+		<ul>
+			<li><i class="fas fa-star"></i>Sortie prévue : <?= htmlspecialchars(date_format(date_create(($article['art_date_sortie'])), 'd/m/Y')) ?></li>
+			<li><a href="index.php?path=detailsOfOneArticle&id=<?= htmlspecialchars($article['art_id']) ?>" class="moreInformations"></a></li>
+		</ul>
+		<span><?= nl2br(htmlspecialchars($article['art_description'])) ?></span>
+	</article>
+	<?php endforeach; ?>
+</section>

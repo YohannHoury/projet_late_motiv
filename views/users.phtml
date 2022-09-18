@@ -1,0 +1,17 @@
+<h1>Listing des utilisateurs du site</h1>
+<p>La liste des utilisateurs est classées par ordre d'arrivée ( le plus récent en premier )</p>
+
+<main class="container mixitup">
+    <div class="choice">
+        <?php foreach($users as $user) : ?>
+            <figure>
+                <p><?= htmlspecialchars($user['user_lastname']) ?> <?= htmlspecialchars($user['user_firstname']) ?></p>
+                <p><?= htmlspecialchars($user['user_mail']); ?></p>
+                <img class="avatarPicture" src="public/uploads/users/<?= $user['user_avatar']; ?>" alt="<?= htmlspecialchars($user['user_avatar']); ?>">
+                <figcaption>
+                    <h3><?= htmlspecialchars($user['user_role']); ?></h3>
+                </figcaption>
+            </figure>
+        <?php endforeach; ?>
+    </div>
+</main>
