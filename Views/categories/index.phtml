@@ -1,0 +1,15 @@
+
+<h2>Choississez votre catégorie</h2>
+
+<menu class class="cat__menu">
+    <div>
+        <a href="index.php?p=categories/daily"><?= $categories[0]->category; ?></a>
+    </div>
+    <div>
+        <a href="index.php?p=categories/medical"><?= $categories[1]->category; ?></a>
+    </div>
+    <div>
+        <a href="index.php?p=categories/sport"><?= $categories[2]->category; ?></a>
+    </div>
+    <input type="button" value="RETOUR" onclick="history.back();">
+</menu>

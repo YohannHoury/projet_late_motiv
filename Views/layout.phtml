@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <?php $head ?>
+</head>
+<body>
+    
+   <header>
+    <nav>
+            <?php if(isset($_SESSION['user']) && !empty($_SESSION['user']['id'])): ?>
+            <ul>
+                    <li>
+                        <a href="index.php">Accueil</a>
+                    </li>
+                   
+                    <li>
+                        <a href="index.php?p=categories">catégories</a>
+                    </li>
+                        <?php if(isset($_SESSION['user']['roles']) && in_array( 1 , $haystack = [$_SESSION['user']['roles']])): ?>
+                            <li>
+                                <a href="index.php?p=admin">Admin</a>
+                            </li>
+                        <?php endif; ?>
+                        <li>
+                            <a href="index.php?p=users/index">Profil</a>
+                        </li>
+                        <li>
+                            <a href="index.php?p=users/logout">Déconnexion</a>
+                        </li>
+                    <?php else: ?>
+                        <li>
+                            <a href="index.php?p=users/login">Connexion</a>
+                        </li>
+                    <?php endif; ?>
+                </ul>
+                
+        </nav>
+    
+        <?php if(!empty($_SESSION['erreur'])): ?>
+            <div class="erreur">
+                <?php echo $_SESSION['erreur']; unset($_SESSION['erreur']); ?>
+            </div>
+        <?php endif; ?>
+        <?php if(!empty($_SESSION['message'])): ?>
+            <div class="message">
+                <?php echo $_SESSION['message']; unset($_SESSION['message']); ?>
+            </div>
+        <?php endif; ?>
+    </header>
+    <main class="container">
+    <?php if(isset($_SESSION['user']) && !empty($_SESSION['user']['id'])): ?>
+        <h2>Bienvenue <?= $_SESSION['user']['username']; ?></h2>
+        <?= $content ?>
+     <?php endif; ?>   
+    </main>
+    <?php $footer ?>
+</body>
+
+</html>

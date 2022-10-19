@@ -1,0 +1,30 @@
+%title-global {
+    font-family: Comfortaa, sans-serif;
+    text-align: center;
+    font-size: 5rem;
+}
+
+@media screen and (max-width: 1100px){
+    %title-global {
+        font-size: 6rem;
+    }
+}
+@media screen and (max-width: 850px){
+    %title-global {
+        font-size: 5rem;
+    }
+}
+@media screen and (max-width: 600px){
+    %title-global {
+        font-size: 3.5rem;
+        padding: 1em 0.5em;
+    }
+}
+
+
+%flex-h{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

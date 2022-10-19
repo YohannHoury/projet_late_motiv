@@ -1,0 +1,41 @@
+.layout__header {
+    @extend %flex-h;
+    background:rgba(0,0,0,.4);
+}
+
+.layout__nav {
+    @extend %flex-h;
+}
+
+.layout__nav__ul {
+    @extend %flex-h;
+    width: 100vw;
+    
+}
+
+.layout__nav__ul__li {
+    margin:0 4em;
+    
+}
+
+.layout__nav__ul__li a {
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #f1f1f1;
+    width: 5em;
+}
+
+
+.layout__container {
+    @extend %flex-h;
+    flex-direction: column;
+    height: 50vh;
+}
+
+.layout--title {
+    @extend %title-global;
+    color: #f1f1f1;
+    margin-bottom: 2em;
+}

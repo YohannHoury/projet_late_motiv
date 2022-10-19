@@ -1,0 +1,12 @@
+.users__index {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user__index__btn a{
+    @extend %title-global;
+    font-size: 1em;
+    text-decoration: none;
+    
+}

@@ -1,0 +1,9 @@
+<section>
+<h1 class="titre-h1">BIENVENUE SUR LATE'MOTIV</h1>
+    <a  
+       <?php if(!isset($_SESSION['user']['id']) || empty($_SESSION['user']['id'])): ?>
+         href="index.php?p=main/menu"
+        <?php elseif(isset($_SESSION['user']['id']) && !empty($_SESSION['user']['id'])): ?> 
+          href="index.php?p=users/index"
+        <?php endif; ?>>DÉMARRER</a>
+</section>

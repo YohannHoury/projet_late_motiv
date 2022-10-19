@@ -1,0 +1,59 @@
+
+.login__section {
+    @extend %flex-v;
+    margin-top: 5em;
+}
+
+.login--title {
+    @extend %title-global;
+    color: #f1f1f1;
+    font-weight: bold;
+}
+
+.login--title2 {
+    @extend %title-global;
+    font-size: 3em;
+    color: #f1f1f1;
+    font-weight: bold;
+}
+
+.login--p {
+   @extend %title-global;
+    font-size: 2em;
+    color: #f1f1f1;
+    font-weight: bold; 
+}
+
+.login__form {
+    margin-top: 2em;
+    @extend %flex-v;
+    height: 50vh;
+}
+
+.fields {
+    border: .1em solid #000;
+    border-radius:.5em;
+    line-height: 6em;
+    width: 50em;
+    margin: 1em 0;
+    text-align: center;
+    background: rgba(0,0,0,.3);
+    
+}
+
+.fields::placeholder {
+   color: white;
+   font-size: 1.5em;
+    
+}
+
+
+#center-btn {
+    @extend %flex-h;
+}
+#btn-form {
+    
+    @extend %btn;
+    
+    
+}

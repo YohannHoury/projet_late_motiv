@@ -1,0 +1,36 @@
+
+.menu {
+    @extend %flex-v;
+    margin-top: 5em;
+}
+
+.menu--title {
+    @extend %title-global;
+    color: #f1f1f1;
+    font-weight: bold;
+}
+.menu__nav {
+    @extend %flex-v;
+    height: 50vh;
+}
+
+.menu__nav ul li{
+    border: .1em solid #000;
+    border-radius:.5em;
+    line-height: 6em;
+    width: 30em;
+    margin:.6em 0;
+    text-align: center;
+    background: rgba(0,0,0,.3);
+    
+}
+
+.menu__nav ul li a {
+    text-decoration: none;
+    color: #f1f1f1;
+    @extend %title-global;
+    font-size: 2rem;
+    
+}
+
+

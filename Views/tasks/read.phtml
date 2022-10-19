@@ -1,0 +1,14 @@
+<section>
+   <?php if(isset($_SESSION['user']['id']) == !empty($_SESSION['user']['id'])): ?>
+            <?php if(isset($_SESSION['user']['id']) == $task->author_id): ?>
+            <article>
+                <a href="index.php?p=tasks/read/<?= $task->id ?>">
+                <h2><?= $task->title ?></a></h2>
+                <div><?= $task->description ?></div>
+                <div><?= $task->date ?></div>
+                <button><a href="index.php?p=tasks/update/<?= $task->id ?>">Modifier</a></button>
+                <button><a href="index.php?p=tasks" >Revenir à la liste</a></button>
+            </article>
+             <?php endif; ?>
+    <?php endif; ?>
+</section>

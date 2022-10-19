@@ -1,0 +1,171 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,html {
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  justify-content: space-between;
+  background: rgb(2,0,36);
+  background: linear-gradient(180deg, rgba(2,0,36,0.8379726890756303) 0%, rgba(37,141,191,0.6979166666666667) 50%, rgba(0,212,255,1) 100%);
+}
+
+body * {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;  
+}
+
+img {
+	max-width: 100%;
+	width: 30%;
+}
+
+
+h1, 
+h2, 
+h3, 
+h4 {
+	font-family: Roboto, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+} 
+
+h1 {
+	font-size: 2rem;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+p {
+	margin-bottom: 1.5rem;
+}
+
+a {
+	text-decoration: none;
+	color:#f1f1f1;
+	font-size: 1.5rem;
+}
+/* *****************************************************************
+HEADER
+***************************************************************** */
+
+header {
+	padding: 3rem 0 2rem 0;
+	background: linear-gradient(to bottom, rgba(208,197,186,1) 0%,rgba(235,227,219,0.25) 25%,rgba(255,255,255,0) 100%);
+}
+
+/* *****************************************************************
+MAIN
+***************************************************************** */
+
+main.container {
+	padding: 2rem;
+}
+
+
+
+section {
+	@extend %flex-h;
+	flex-direction: column;
+	align-items: center;
+	flex-grow: 1;
+}
+
+
+
+/* *****************************************************************
+VERSION TABLETTE
+***************************************************************** */
+
+@media screen and (min-width: 760px) {
+	nav>ul {
+		display: flex;
+		justify-content: space-around;
+		border-top: none;
+	
+	}
+	
+	nav>ul>li>a {
+		border-bottom: none;
+	}
+	
+
+}
+
+/* *****************************************************************
+VERSION DESKTOP
+***************************************************************** */
+
+@media screen and (min-width: 1100px) {
+	.container, section {
+		max-width: 1400px;
+		margin: auto;
+	}
+	
+	header .container, 
+	main.container,
+	footer  {
+		padding: 2rem 5rem;
+	}
+	
+	header .container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.logo {
+		flex-direction: row;
+		margin-left: 2rem;
+	}
+	
+	.logo img {
+		margin-right: 1rem;
+	}
+	
+	nav>ul {
+		background-color: transparent;
+		margin-top: 0;
+	}
+	
+	nav>ul>li {
+		margin: 0 2rem;
+	}
+	
+
+	form, video {
+		width: 70%;
+	}
+}
+
+/***********************message***************************************/
+
+
+
+.erreur {
+	text-transform:uppercase;
+	background-color: red;
+	padding: 0.2em;
+}
+
+.message {
+	text-transform:uppercase;
+	background-color: green;
+	padding: 0.2em;
+}
+
+/*****************************tableau*****************************************************/
+
+table, th, td {
+  border: 1px solid #000;
+}

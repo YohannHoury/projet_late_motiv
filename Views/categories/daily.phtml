@@ -1,0 +1,25 @@
+<section>
+<h2>CATÉGORIE <?= $category[0]->category; ?> </h2>
+
+<?php if($category[0]->category == true): ?>
+
+<?php if(isset($_SESSION['user']['id']) == !empty($_SESSION['user']['id'])): ?>
+    <?php foreach($tasks as $task): ?>
+        <?php if(isset($_SESSION['user']['id']) == $task->author_id): ?>
+        <article class= card>
+            <a href="index.php?p=tasks/read/<?= $task->id ?>">
+            <h2><?= $task->title ?></a></h2>
+            <div><?= $task->description ?></div>
+            <div><?= $task->date ?></div>
+            <p>
+                <a href="index.php?p=tasks/update/<?= $task->id ?>">Modifier</a>
+                <a href="index.php?p=users/deleteTask/<?= $task->id ?>" >Terminer</a>
+            </p>
+            <input type="button" value="RETOUR" onclick="history.back();">
+        </article>
+         <?php endif; ?>
+    <?php endforeach; ?>
+<?php endif; ?>
+ 
+<?php endif; ?>
+</section>

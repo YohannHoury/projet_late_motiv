@@ -1,0 +1,24 @@
+<?php $categories; ?>
+<section>
+     <h2>Ajouter une tâche</h2>
+       <form action='' method='post'>
+         <p>
+           <label for='title'>Titre de la tâche :</label>
+          <input type='text' name='title' id="title" value="">
+         </p>
+         <p>
+           <label for='description'>Texte de la tâche</label>
+           <textarea name='description' id="description" class="fields"></textarea>
+         </p>
+         <p>
+           <select>
+            <?php foreach ($categories as $category):?>
+             <option value="<?= $category->id; ?>" selected><?= $category->category; ?></option>
+            <?php endforeach; ?>
+            </select>
+         </p>
+         <p>
+           <input type="submit" name="validate" value="Ajouter">
+         </p>
+      </form> 
+</section>

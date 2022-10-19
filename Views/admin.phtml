@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <?php $head ?>
+</head>
+<body>
+    <header> 
+          <?php if(isset($_SESSION['user']) && in_array( 1 , $haystack = [$_SESSION['user']['roles']])): ?>
+        <nav>
+                <ul>
+                    <li>
+                        <a href="index.php">Accueil du site</a>
+                    </li>
+                    <li>
+                        <a href="index.php?p=admin">Accueil de l'admin</a>
+                    </li>
+                    
+                    <li>
+                        <a href="index.php?p=tasks">Liste des tâches</a>
+                    </li>
+               
+                        <li>
+                            <a href="index.php?p=users/index">Profil</a>
+                        </li>
+                        <li>
+                            <a  href="index.php?p=users/logout">Déconnexion</a>
+                        </li>
+                    <?php else: ?>
+                        <li>
+                            <a href="index.php?p=users/login">Connexion</a>
+                        </li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+        </nav>
+
+        <?php if(!empty($_SESSION['erreur'])): ?>
+            <div class="erreur">
+                <?php echo $_SESSION['erreur']; unset($_SESSION['erreur']); ?>
+            </div>
+        <?php endif; ?>
+        <?php if(!empty($_SESSION['message'])): ?>
+            <div class="message">
+                <?php echo $_SESSION['message']; unset($_SESSION['message']); ?>
+            </div>
+        <?php endif; ?>
+    </header>
+    <main class="container">
+        <h2>Bienvenue <?= $_SESSION['user']['username']; ?></h2>
+        <?= $content ?>
+    </main>
+        <?php $footer ?>
+</body>
+
+</html>
